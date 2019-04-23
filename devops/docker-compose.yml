@@ -1,0 +1,11 @@
+version: '2'
+services:
+  deeplearning:
+    #image: nhatthai/machine-learning-python3.6:latest
+    #command: jupyter notebook
+    build:
+      context: ./
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../src:/home/jovyan/work
