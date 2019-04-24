@@ -1,5 +1,6 @@
-# nltk>=3.3, pandas==0.21.0, numpy, scipy>=0.13.3, scikit-learn==0.20
 # installed in nhatthai/machine-learing-python3.6 image
+# nltk>=3.3, pandas==0.21.0, numpy, scipy>=0.13.3, scikit-learn==0.20
+
 matplotlib
 keras
 tensorflow
