@@ -3,7 +3,7 @@
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 from keras.models import Sequential
@@ -41,12 +41,14 @@ for i in tqdm(range(train.shape[0])):
 X = np.array(train_image)
 
 X.shape
+# (7254, 400, 300, 3)
 
-plt.imshow(X[2])
+# plt.imshow(X[2])
 
 # y = np.array(train.drop(['Id', 'Genre'], axis=1))
 y = np.array(train.drop(['Id', 'Genre'], axis=1))[:max_size]
 y.shape
+# (7254, 25)
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, random_state=42, test_size=0.1)
