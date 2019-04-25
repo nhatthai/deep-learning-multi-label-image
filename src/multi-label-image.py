@@ -12,8 +12,12 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras.preprocessing import image
 from sklearn.model_selection import train_test_split
 
+# set max size for building model
+count = 0
+max_size = 500
 
 # reading the csv file
+# /home/jovyan/work/Multi_Label_dataset/train.csv
 train = pd.read_csv('Multi_Label_dataset/train.csv')
 
 # printing first five rows of the file
@@ -23,9 +27,7 @@ train.columns
 
 train_image = []
 
-count = 0
-max_size = 50
-
+# /home/jovyan/work/Multi_Label_dataset/Images/
 for i in tqdm(range(train.shape[0])):
     img = image.load_img(
         'Multi_Label_dataset/Images/' + train['Id'][i] + '.jpg',
@@ -87,6 +89,7 @@ model.fit(
     validation_data=(X_test, y_test), batch_size=64)
 
 # Making Prediction for GOT.jpg
+# /home/jovyan/work/Multi_Label_dataset
 img = image.load_img('Multi_Label_dataset/GOT.jpg', target_size=(400, 400, 3))
 img = image.img_to_array(img)
 img = img/255

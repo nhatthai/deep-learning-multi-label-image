@@ -5,7 +5,7 @@
 + RAM: 8GB
 + Docker
 + Docker-Compose
-+ Code was sync to /home/jovyan/work folder
++ Code was synced to /home/jovyan/work folder
 
 ### Usage
 ----------
