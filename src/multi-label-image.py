@@ -80,12 +80,10 @@ model.add(Dense(25, activation='sigmoid'))
 model.summary()
 
 model.compile(
-    optimizer='adam', loss='binary_crossentropy',
-    metrics=['accuracy'])
+    optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # training the model
-model.fit(
-    X_train, y_train, epochs=10,
+model.fit(X_train, y_train, epochs=10,
     validation_data=(X_test, y_test), batch_size=64)
 
 # Making Prediction for GOT.jpg
@@ -96,5 +94,6 @@ img = img/255
 classes = np.array(train.columns[2:])
 proba = model.predict(img.reshape(1, 400, 400, 3))
 top_3 = np.argsort(proba[0])[:-4:-1]
+
 for i in range(3):
     print("{}".format(classes[top_3[i]])+" ({:.3})".format(proba[0][top_3[i]]))
