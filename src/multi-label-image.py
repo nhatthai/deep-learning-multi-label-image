@@ -97,3 +97,25 @@ top_3 = np.argsort(proba[0])[:-4:-1]
 
 for i in range(3):
     print("{}".format(classes[top_3[i]])+" ({:.3})".format(proba[0][top_3[i]]))
+
+# TODO: create function
+img = image.load_img('Multi_Label_dataset/decision.jpg', target_size=(400, 400, 3))
+img = image.img_to_array(img)
+img = img/255
+classes = np.array(train.columns[2:])
+proba = model.predict(img.reshape(1, 400, 400, 3))
+top_3 = np.argsort(proba[0])[:-4:-1]
+
+for i in range(3):
+    print("{}".format(classes[top_3[i]])+" ({:.3})".format(proba[0][top_3[i]]))
+
+# TODO: create function
+img = image.load_img('Multi_Label_dataset/detroit.jpg', target_size=(400, 400, 3))
+img = image.img_to_array(img)
+img = img/255
+classes = np.array(train.columns[2:])
+proba = model.predict(img.reshape(1, 400, 400, 3))
+top_3 = np.argsort(proba[0])[:-4:-1]
+
+for i in range(3):
+    print("{}".format(classes[top_3[i]])+" ({:.3})".format(proba[0][top_3[i]]))

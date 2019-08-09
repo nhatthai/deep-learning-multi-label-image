@@ -2,8 +2,8 @@ version: '2'
 services:
   deeplearning:
     image: devops_deeplearning:latest
-    # build:
-    #   context: ./
+    build:
+      context: ./
     command: jupyter notebook --ip=0.0.0.0 --allow-root
     ports:
       - "8888:8888"
